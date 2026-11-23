@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 
 class SemanticMovieRecommender:
-    def __init__(self, csv_path: str = "movies.csv", model_name: str = "paraphrase-multilingual-MiniLM-L12-v2"):
+    def __init__(self, csv_path: str = "290_movies.csv", model_name: str = "paraphrase-multilingual-MiniLM-L12-v2"):
         self.df = pd.read_csv(csv_path)
         self.model = SentenceTransformer(model_name)
         self._build_movie_embeddings()
