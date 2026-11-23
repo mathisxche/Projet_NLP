@@ -128,7 +128,8 @@ if submitted:
                 genres_themes=genres_themes_query,
                 mood=mood_query,
                 style_period=style_period_query,
-                top_k=3
+                top_k=3,
+                max_movies=max_movies_choice
             )
 
         st.divider()
