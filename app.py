@@ -19,6 +19,21 @@ st.markdown(
     "Décrivez le film dont vous avez envie en **langage naturel**. "
     "Notre moteur NLP analyse le sens profond de vos attentes pour vous proposer les **3 films les plus pertinents** avec une explication détaillée."
 )
+# --- AFFICHAGE DU DATASET & CHOIX DU NOMBRE DE FILMS ---
+total_movies = len(recommender.df)
+st.info(f"📚 **Catalogue chargé :** {total_movies} films disponibles dans la base de données.")
+
+if total_movies > 50:
+    max_movies_choice = st.slider(
+        "Sur combien de films souhaitez-vous que le modèle effectue sa recherche ?",
+        min_value=50,
+        max_value=total_movies,
+        value=total_movies,
+        step=10
+    )
+else:
+    max_movies_choice = total_movies
+    st.caption(f"Le modèle effectuera sa recherche sur l'ensemble des {total_movies} films disponibles.")
 
 st.divider()
 
