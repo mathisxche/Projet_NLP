@@ -9,7 +9,7 @@ st.set_page_config(
 
 @st.cache_resource
 def load_recommender():
-    return SemanticMovieRecommender("movies.csv")
+    return SemanticMovieRecommender("290_movies.csv")
 
 recommender = load_recommender()
 
